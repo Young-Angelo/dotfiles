@@ -1,0 +1,103 @@
+# avcado's
+#  bashrc
+
+# ls alias
+alias ls='ls --color=auto'
+
+# PS* (PS1, PS2, PS3, PS4)
+
+# Prompt string
+export PS1='\[\e[0;35m\]\u\[\e[m\] \[\e[0m\]in\[\e[m\] \[\e[0;96m\]\w\[\e[m\] \[\e[0;93m\]λ\[\e[m\] \[\e0'
+
+# When you do \, this shows up.
+export PS2='addition> '
+
+# When you use the select command, this shows up
+export PS3='select> '
+
+# Useless, but still want to set it.
+export PS4='+' # i want a PS4 btw.
+
+# line wrap on window resize
+shopt -s checkwinsize
+
+
+# alias
+alias neofetch='neofetch --source ~/.config/neofetch/ascii'
+
+# sudo aliases
+alias please="sudo"
+alias pls="sudo"
+alias plz="sudo"
+alias s="sudo"
+
+# ps alias
+alias ps="ps -ef | grep $1"
+
+# dirrectory aliases
+
+# -- common directories --
+alias home='cd ~'
+alias root='cd /'
+
+# -- programming dir --
+alias prog='cd ~/Programming'
+
+# -- useful stuff --
+alias ..='cd ..'
+alias ...='cd ..; cd ..'
+alias ....='cd ..; cd ..; cd ..'
+
+
+# git stuff!
+alias g='git'
+alias gst='git status'
+alias gcm='git commit -m'
+alias gcl='git clone'
+alias gu='git add -u'
+alias ga='git add .'
+
+
+# aliases to certain configs
+alias vimrc='vim ~/.vimrc'
+alias bashrc='vim ~/.bashrc'
+alias swayrc='vim ~/.config/sway/config'
+
+# aliases to bashrc reloading and stuff
+alias bl="cat ~/.bashrc | wc -l"
+alias bs="source ~/.bashrc; reset"
+alias b="cat ~/.bashrc"
+
+# add an alias for netcat + termbin
+alias ntc="nc termbin.com 9999"
+
+# end aliases
+
+# begin unix command options
+
+export EDITOR=vim
+export GREP_OPTIONS=' — color=auto'
+
+# exports
+export PATH="/home/anon/Scripts:$PATH"
+
+# man options
+export LANG="C"
+export LESS_TERMCAP_mb=$'\e[1;32m'
+export LESS_TERMCAP_md=$'\e[1;32m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;33m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;31m'
+
+# icon
+gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
+
+
+if [[ "$(tty)" == "/dev/tty1" ]]; then
+  echo Starting sway!  
+  pgrep sway || sway
+fi
+
+# end avcado's bashrc
