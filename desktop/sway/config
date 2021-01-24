@@ -20,7 +20,7 @@ set $nwgpower nwgbar
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/anon/Backgrounds/solitude.jpg fill
+output * bg /home/anon/Backgrounds/pic31.png fill
 ### Key bindings
    # Start a terminal
     bindsym $mod+Return exec $term
@@ -139,5 +139,8 @@ gaps outer 10
 bar {
     swaybar_command waybar
 }
+
+# assign stuff to workspaces
+assign [app_id="qemu"] workspace 4
 
 include /etc/sway/config.d/*
